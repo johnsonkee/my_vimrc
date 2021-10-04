@@ -1,0 +1,67 @@
+" Basic setting ---------------{{{
+echom ">^.^<"
+" set line number and relative number
+set nu rnu
+" set tab width = 4
+set shiftwidth=4
+" use mouse
+set mouse=a
+" add some abbreviation
+iabbrev ssig -- <cr>wxz<cr>876688461@qq.com
+" }}}
+
+" Mapping ---------------------{{{
+" use <c-u> in insert mode to transform a word from lowercase to upper case
+inoremap <c-u> <esc>viwUi
+nnoremap <c-u> viwU
+" use jk to escape the insert mode  
+inoremap jk <esc>
+" leader
+let mapleader = '\'
+let maplocalleader = '\\'
+" open and close configuration file
+nnoremap <leader>ev :vsplit /home/wxz/.vimrc_learn<cr>
+nnoremap <leader>sv :source /home/wxz/.vimrc_learn<cr>
+" set some powerful mapping
+" forbid some customed keystroke
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap H ^
+nnoremap L $
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+inoremap <esc> <nop>
+
+" }}}
+
+" FileType-specific setting ---{{{
+" language support 
+syntax on
+" Python file settings ---------------------- {{{
+augroup filetype_python
+    autocmd FileType python nnoremap <buffer> <localleader>c I#  <esc>
+    autocmd FileType python :iabbrev <buffer> if_name if __name__ == "__main__":<cr>
+augroup END
+" }}}
+" Vimscript file settings ---------------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+" }}}
+
+" Status Line------------------{{{
+" statusline
+set statusline=%f         " 文件的路径
+set statusline+=%=        " 切换到右边
+set statusline+=%l        " 当前行
+set statusline+=/         " 分隔符
+set statusline+=%L        " 总行数
+" }}}
+
