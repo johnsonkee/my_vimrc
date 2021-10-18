@@ -27,6 +27,10 @@ nnoremap <leader>sv :source /home/wxz/.vimrc_learn<cr>
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap H ^
 nnoremap L $
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
 inoremap <Left> <nop>
 inoremap <Right> <nop>
 inoremap <Up> <nop>
